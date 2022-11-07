@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="test.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="test1">
+    <img class="test1" alt="image">
+</div>
+<div class="test2">
+    <ul class="test2">
+        <li class="test2"><a href="#">Первый</a></li>
+        <li class="test2"><a href="#">Второй</a></li>
+        <li class="test2"><a href="#">Третий</a></li>
+        <li class="test2"><a href="#">Четвертый</a></li>
+    </ul>
+</div>
+
+<div class="test3">
+<ul class="test3 topmenu">
+    <li class="test3"><a href="#">Первый пункт</a></li>
+    <li class="test3"><a href="#">Второй пункт</a></li>
+    <li class="test3"><a href="#">Пункт с подпунктами</a>
+        <ul class="submenu">
+            <li class="test3"><a href="#">пп один</a></li>
+            <li class="test3"><a href="#">пп два</a></li>
+            <li class="test3"><a href="#">пп три</a></li>
+        </ul>
+    </li>
+    <li class="test3"><a href="">Четвертый пункт</a></li>
+</ul>
+</div>
+
+<div class="parent">
+    <div class="class" style="height: 500px; width: 30px; background-color: black"></div>
+    <div class="class" style="height: 200px; width: 30px; background-color: black"></div>
+    <div class="class" style="height: 100px; width: 30px; background-color: black"></div>
+    <div class="class" style="height: 400px; width: 30px; background-color: black"></div>
+</div>
+
+<script>
+    //Упорядочивание дочерних элементов
+    let elements = document.querySelectorAll('.class');
+    let parent = document.querySelector('.parent');
+
+    elements.forEach((element) => {
+        element.remove();
+    });
+
+    elements_array = Array.prototype.slice.call(elements);
+    elements_array.sort((elementA, elementB) => elementA.style.height > elementB.style.height ? -1 : 1);
+
+    elements_array.forEach((element) => {
+        parent.append(element);
+    });
+</script>
+
+<div>
+    <p data-attribute="noprint">1</p>
+    <p data-attribute="noprint">2</p>
+    <p data-attribute="print">3</p>
+    <p data-attribute="noprint">4</p>
+</div>
+
+<script>
+    function windowReady()
+    {
+        dataAttributes = document.querySelectorAll('[data-attribute="noprint"]');
+        dataAttributes.forEach((dataAttribute) => {
+            dataAttribute.hidden = true
+        });
+    }
+    window.onload = windowReady;
+</script>
+
+
+</body>
+</html>

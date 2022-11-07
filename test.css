@@ -1,0 +1,64 @@
+div.test1 {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    background-color: aqua;
+}
+
+img.test1 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+div.test2 {
+    width: 1000px;
+    height: 50px;
+    background-color: green;
+}
+
+ul.test2 {
+    text-align-last: justify;
+    margin: 0;
+    padding: 0;
+}
+
+div.test3 {
+    width: 550px;
+    height: 50px;
+    background-color: antiquewhite;
+}
+ul li.test2 {
+    display: inline;
+}
+
+ul.test3 {
+    margin: 0;
+    padding: 0;
+}
+
+.topmenu > li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+
+}
+
+.topmenu li:hover .submenu {
+    transform: scaleY(1);
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    transition: 0.5s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+}
+
+.class {
+    display: inline-block;
+}
